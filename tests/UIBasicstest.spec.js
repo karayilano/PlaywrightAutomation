@@ -53,7 +53,7 @@ test("UI Controls", async ({page}) =>
 
 });
 
-test.only("Child windows test", async ({browser}) => 
+test("Child windows test", async ({browser}) => 
 {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -71,7 +71,5 @@ test.only("Child windows test", async ({browser}) =>
     const text = await newPage.locator(".red").textContent();
     const textArray = text.split('@');
     const domain = textArray[1].split(" ")[0];
-    await userName.fill(domain);
-    await page.pause()
-    
+    await userName.fill(domain);    
 });
