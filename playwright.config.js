@@ -37,8 +37,8 @@ const config = {
   use: {
 
     browserName: 'chromium',
-    headless: false
-
+    headless: true
+    
   },
 
   /* Configure projects for major browsers */
