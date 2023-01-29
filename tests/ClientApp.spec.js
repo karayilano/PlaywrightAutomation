@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
 
-test('Browser Context Playwright test', async ({page}) =>
+test.only('Browser Context Playwright test', async ({page}) =>
 {
     const products = page.locator(".card-body");
     const productName = "iphone 13 pro"
