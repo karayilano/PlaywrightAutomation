@@ -1,10 +1,13 @@
 const {test, expect} = require('@playwright/test');
 
 
-test('Browser Context Playwright test', async ({browser}) =>
+test.only('Browser Context Playwright test', async ({browser}) =>
 {
     const context = await browser.newContext();
     const page = await context.newPage();
+
+    //blocking image files
+    //page.route("**/*.{jpg,png,jpeg}", route => route.abort());
 
     const userName = page.locator('input#username');
     const signInbtn = page.locator('#signInBtn');
