@@ -34,7 +34,7 @@ test("Popup validations", async ({page}) =>
 });
 
 
-test.only("Automation practices", async ({browser}) => 
+test("Automation practices", async ({browser}) => 
 {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -107,3 +107,23 @@ test.only("Automation practices", async ({browser}) =>
     await page.pause();
 
 });
+
+
+test("Screenshot & visual comparison", async ({page}) => 
+{
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await expect(page.locator("#displayed-text")).toBeVisible();
+    await page.locator("#hide-textbox").click();
+
+    //screenshot
+    await page.screenshot({path: 'screenshot.png'})
+
+    await expect(page.locator("#displayed-text")).toBeHidden();
+
+})
+
+test.only("visual comparison", async ({page}) => 
+{
+    await page.goto("https://google.com");
+    expect(await page.screenshot()).toMatchSnapshot('landing.png');
+})
