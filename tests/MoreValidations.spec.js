@@ -122,7 +122,7 @@ test("Screenshot & visual comparison", async ({page}) =>
 
 })
 
-test.only("visual comparison", async ({page}) => 
+test("visual comparison", async ({page}) => 
 {
     await page.goto("https://google.com");
     expect(await page.screenshot()).toMatchSnapshot('landing.png');

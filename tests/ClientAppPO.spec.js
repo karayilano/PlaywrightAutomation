@@ -3,7 +3,7 @@ const { POManager } = require('../pageobjects/POManager')
 const { customtest } = require('../utils/extend-test')
 
 const dataSet = JSON.parse(JSON.stringify(require("../testdatas/placeorderTestData.json")));
-
+test.describe.configure({mode:'serial'});
 for(const data of dataSet)
 {
     test(`Client App ${data.productName} `, async ({page}) =>
@@ -40,7 +40,7 @@ for(const data of dataSet)
     });
 }
 
-customtest.only("Custom test", async({page, testDataForOrder}) => 
+customtest("Custom test", async({page, testDataForOrder}) => 
 {
     const username = testDataForOrder.username;
     const password = testDataForOrder.password;

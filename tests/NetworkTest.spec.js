@@ -1,5 +1,5 @@
 import { test, expect, request } from '@playwright/test';
-const {APIUtils} = require("./utils/APIUtils.js")
+const {APIUtils} = require("../utils/APIUtils.js")
 const loginPayload = {userEmail:"kursattest@gmail.com", userPassword:"Iamking@123"};
 const orderPayload = {orders: [{country:"Cuba",productOrderedId:"6262e95ae26b7e1a10e89bf0"}]}
 let token;

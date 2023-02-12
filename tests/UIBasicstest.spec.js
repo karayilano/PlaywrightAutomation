@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
 
-test.only('Browser Context Playwright test', async ({browser}) =>
+test('Browser Context Playwright test', async ({browser}) =>
 {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -56,7 +56,7 @@ test("UI Controls", async ({page}) =>
 
 });
 
-test("Child windows test", async ({browser}) => 
+test("@fast Child windows test", async ({browser}) => 
 {
     const context = await browser.newContext();
     const page = await context.newPage();
